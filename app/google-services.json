@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "331626372969",
+    "project_id": "tolong-online-d9a7e",
+    "storage_bucket": "tolong-online-d9a7e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:331626372969:android:b238a480ab5d514cdc67f8",
+        "android_client_info": {
+          "package_name": "com.example.latihanku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "331626372969-p0c4b095rlopdbo43vgqokv9d77p60ha.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.latihanku",
+            "certificate_hash": "bf7a96e60cc599d5be3007eee1f8dc61a6d453ee"
+          }
+        },
+        {
+          "client_id": "331626372969-lri2jbjgcboep256eqagee9mojvhno89.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAflcbz7u6xuvVFBcmljJXqJegDTQ8zWaY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "331626372969-lri2jbjgcboep256eqagee9mojvhno89.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

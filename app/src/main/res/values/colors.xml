@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="buttonColor">#FF5733</color>
+    <color name="gray">#B0B0B0</color>
+        <color name="kuning_header">#FFB800</color>
+        <color name="abu_background">#1C1C1C</color>
+        <color name="abu_box_tips">#2A2A2A</color>
+        <color name="abu_cuaca_lalin">#333333</color>
+        <color name="abu_muda_tulisan">#CCCCCC</color>
+        <color name="kuning_teks">#FFEB3B</color>
+        <color name="putih">#FFFFFF</color>
+        <color name="hitam">#000000</color>
+        <color name="oranye_promo">#FFA500</color>
+
+</resources>
