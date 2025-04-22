@@ -24,8 +24,8 @@
 
       <ImageButton
           android:id="@+id/btnBack"
-          android:layout_width="24dp"
-          android:layout_height="24dp"
+          android:layout_width="36dp"
+          android:layout_height="36dp"
           android:background="@null"
           android:src="@drawable/back"
           android:backgroundTint="@android:color/white"
@@ -54,7 +54,8 @@
           android:src="@drawable/bulat_titik"
           app:layout_constraintBottom_toBottomOf="@id/etFrom"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="@id/etFrom" />
+          app:layout_constraintTop_toTopOf="@id/etFrom"
+          android:importantForAccessibility="no"/>
 
       <ImageView
           android:id="@+id/iconTo"
@@ -64,12 +65,13 @@
           android:src="@drawable/telegram"
           app:layout_constraintBottom_toBottomOf="@id/etTo"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="@id/etTo" />
+          app:layout_constraintTop_toTopOf="@id/etTo"
+          android:importantForAccessibility="no"/>
 
       <EditText
           android:id="@+id/etFrom"
           android:layout_width="280dp"
-          android:layout_height="match_parent"
+          android:layout_height="wrap_content"
           android:layout_marginTop="16dp"
           android:background="@drawable/retangleedittext"
           android:hint="lokasi anda sekarang..."
@@ -92,12 +94,13 @@
           app:layout_constraintBottom_toBottomOf="@id/etFrom"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintTop_toTopOf="@id/etFrom"
-          app:layout_constraintVertical_bias="0.0" />
+          app:layout_constraintVertical_bias="0.0"
+          android:importantForAccessibility="no"/>
 
       <EditText
           android:id="@+id/etTo"
           android:layout_width="280dp"
-          android:layout_height="match_parent"
+          android:layout_height="wrap_content"
           android:layout_marginTop="16dp"
           android:background="@drawable/retangleedittext"
           android:hint="Lokasi tujuan anda...?"
@@ -109,40 +112,51 @@
           app:layout_constraintHorizontal_bias="0.507"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@id/etFrom" />
+
+      <ImageView
+          android:id="@+id/btnShare"
+          android:layout_width="36dp"
+          android:layout_height="36dp"
+          android:layout_marginTop="8dp"
+          android:layout_marginEnd="12dp"
+          android:adjustViewBounds="true"
+          android:src="@drawable/sheree"
+          android:text="Bagikan Lokasi"
+          android:background="@color/white"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
   </androidx.cardview.widget.CardView>
-
-
-  <ImageView
-      android:id="@+id/markerCenter"
-      android:layout_width="48dp"
-      android:layout_height="48dp"
-      android:layout_marginTop="132dp"
-      android:src="@drawable/maps"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.28"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/topCard" />
-
-  <ImageView
-      android:id="@+id/btnCompass"
-      android:layout_width="48dp"
-      android:layout_height="48dp"
-      android:src="@drawable/bintangpeta"
-      android:layout_margin="16dp"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent" />
 
   <org.osmdroid.views.MapView
       android:id="@+id/map"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:layout_marginTop="230dp"
-      android:imeOptions="actionSearch"
-      android:inputType="text"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/tvDistance"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="32dp"
+      android:layout_marginBottom="100dp"
+      android:textColor="@android:color/black"
+      android:textSize="16sp"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="@+id/map" />
+
+  <ImageView
+      android:id="@+id/btnMyLocation"
+      android:layout_width="48dp"
+      android:layout_height="48dp"
+      android:src="@drawable/bintangpeta"
+      android:layout_margin="16dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

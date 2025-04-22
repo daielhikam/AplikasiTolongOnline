@@ -23,7 +23,7 @@ class Onboarding : AppCompatActivity() {
         }
 
         binding.btnLogin.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, LoginNumberPhone::class.java)
             startActivity(intent)
         }
 

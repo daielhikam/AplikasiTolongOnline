@@ -1,4 +1,4 @@
-package com.example.latihanku.fragmen
+package com.example.latihanku.fragmen.chat
 
 import android.os.Bundle
 import android.view.LayoutInflater

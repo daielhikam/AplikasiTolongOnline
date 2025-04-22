@@ -2,6 +2,7 @@ package com.example.latihanku.fragmen
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
@@ -15,7 +16,6 @@ import com.example.latihanku.MapsActivity
 import com.example.latihanku.R
 import com.example.latihanku.SessionManager
 import com.example.latihanku.databinding.FragmentHomeBinding
-import com.facebook.FacebookSdk
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.firebase.auth.FirebaseAuth
 
@@ -37,7 +37,6 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        FacebookSdk.sdkInitialize(requireContext())
         auth = FirebaseAuth.getInstance()
         session = SessionManager(requireContext())
 
@@ -45,12 +44,10 @@ class HomeFragment : Fragment() {
         val navigationView = binding.navigationView
         val btnDrawer = binding.btnDrawer
 
-        // Buka Drawer
         btnDrawer.setOnClickListener {
             drawerLayout.openDrawer(GravityCompat.START)
         }
 
-        // Isi Header Navigation Drawer
         val headerView = navigationView.getHeaderView(0)
         val tvName = headerView.findViewById<TextView>(R.id.tvName)
         val tvEmail = headerView.findViewById<TextView>(R.id.tvPhone)
@@ -69,7 +66,6 @@ class HomeFragment : Fragment() {
         tvName.text = user?.displayName ?: "Nama tidak tersedia"
         tvEmail.text = user?.email ?: "Email tidak tersedia"
 
-        // Listener menu
         navigationView.setNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.nav_profile -> showToast("My Profile")
@@ -81,6 +77,7 @@ class HomeFragment : Fragment() {
             drawerLayout.closeDrawer(GravityCompat.START)
             true
         }
+
         binding.imgMaps.setOnClickListener {
             val intent = Intent(requireContext(), MapsActivity::class.java)
             startActivity(intent)
@@ -93,7 +90,8 @@ class HomeFragment : Fragment() {
             .setMessage("Apakah kamu yakin ingin logout?")
             .setPositiveButton("Ya") { _, _ ->
                 auth.signOut()
-                session.setLoggedIn(false)
+                session.clearSession()
+
                 val intent = Intent(requireContext(), LoginActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)

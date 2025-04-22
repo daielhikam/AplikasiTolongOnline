@@ -46,23 +46,21 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun registerUser(email: String, password: String) {
         FirebaseAuth.getInstance()
-            .createUserWithEmailAndPassword(email, password)
+        auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this, "Pendaftaran berhasil", Toast.LENGTH_SHORT).show()
+                    // Tidak langsung login
+                    FirebaseAuth.getInstance().signOut() // Logout dulu
+
+                    // Tidak set session login di sini
+                    Toast.makeText(this, "Registrasi berhasil, silakan login", Toast.LENGTH_SHORT).show()
+
                     val intent = Intent(this, LoginActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
                     finish()
                 } else {
-                    val rawMessage = task.exception?.message
-                    val errorMessage = when {
-                        rawMessage?.contains("email address is already in use") == true -> "Email sudah digunakan"
-                        rawMessage?.contains("badly formatted") == true -> "Format email tidak valid"
-                        rawMessage?.contains("Password should be at least") == true -> "Password minimal 6 karakter"
-                        else -> "Pendaftaran gagal: $rawMessage"
-                    }
-
-                    Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Gagal registrasi: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
             }
     }

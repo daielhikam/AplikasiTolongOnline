@@ -3,6 +3,6 @@
     <string name="facebook_app_id">2255880064909471</string>
     <string name="facebook_client_token">662f4b4ce18430d9f4ee82bde0787631</string>
     <string name="default_web_client_id">331626372969-lri2jbjgcboep256eqagee9mojvhno89.apps.googleusercontent.com</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ors_api_key">YOUR_ORS_API_KEY</string> <!-- Ganti dengan API key Anda -->
 </resources>

@@ -57,11 +57,9 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
 
     implementation(libs.androidx.ui)
-    implementation(libs.androidx.material)
 
      implementation(libs.play.services.auth)
     implementation(libs.firebase.ui.auth)
-    implementation(libs.facebook.android.sdk)
 
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.navigation.ui.ktx)
@@ -74,8 +72,17 @@ dependencies {
     implementation(libs.play.services.maps)
     kapt(libs.compiler)
 
-    //maps
-    implementation(libs.osmdroid.android)
+
+    // OSMDroid untuk peta
+    implementation("org.osmdroid:osmdroid-android:6.1.10")
+    //google play service
+    implementation("com.google.android.gms:play-services-location:21.3.0")
+    // Untuk OkHttpClient
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
+
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-scalars:2.9.0") // Untuk response string
+    implementation("com.android.volley:volley:1.2.1")
 
     // untuk request ke OpenRouteService
     implementation(libs.okhttp)

@@ -8,8 +8,9 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
+
+
     <application
-        android:name="com.example.latihanku.MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -19,53 +20,38 @@
         android:supportsRtl="true"
         android:theme="@style/Base.Theme.LatihanKu"
         tools:targetApi="31">
+        <uses-library
+            android:name="org.osmdroid"
+            android:required="false"
+            tools:ignore="WrongManifestParent" />
         <activity
-            android:name="com.example.latihanku.Onboarding"
-            android:exported="false"/>
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
-
-        <activity
-            android:name="com.example.latihanku.MainActivity"
+            android:name=".VerifyOtpActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.latihanku.LoginNumberPhone"
+            android:name=".Onboarding"
             android:exported="false" />
 
-        <meta-data
-            android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"
-            tools:replace="android:value" />
-        <meta-data
-            android:name="com.facebook.sdk.ClientToken"
-            android:value="@string/facebook_client_token" />
 
         <activity
-            android:name="com.facebook.FacebookActivity"
-            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" />
-
-        <provider
-            android:name="com.facebook.internal.FacebookInitProvider"
-            android:authorities="com.facebook.app.FacebookInitProvider"
-            android:exported="false"
-            tools:replace="android:authorities" />
-
-        <activity
-            android:name="com.example.latihanku.ForgotPasswordActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.latihanku.MapsActivity"
+            android:name=".LoginNumberPhone"
             android:exported="false" />
         <activity
-            android:name="com.example.latihanku.RegisterActivity"
+            android:name=".ForgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.latihanku.LoginActivity"
+            android:name=".MapsActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.latihanku.fragmen.SplashActivity"
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".fragmen.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
